@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- 資料表結構 `direction`
 --
-
+-- 專案
 CREATE TABLE `direction` (
   `id` tinyint(1) NOT NULL,
   `direction_id` int(11) NOT NULL,
@@ -49,7 +49,7 @@ INSERT INTO `direction` (`id`, `direction_id`, `name`, `description`) VALUES
 --
 -- 資料表結構 `member`
 --
-
+-- 指定成員
 CREATE TABLE `member` (
   `id` tinyint(1) NOT NULL,
   `project_id` int(11) NOT NULL,
@@ -92,9 +92,49 @@ INSERT INTO `project` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `user`
+-- 資料表結構 `face`
 --
 
+CREATE TABLE `face` (
+  `id` tinyint(1) UNSIGNED ZEROFILL NOT NULL,
+  `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `face`
+--
+
+INSERT INTO `project` (`id`, `name`, `description`) VALUES
+(1, '2222', '唱歌'),
+(2, '3333', '唱歌');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `opinion`
+--
+
+CREATE TABLE `opinion` (
+  `total` tinyint(1) UNSIGNED ZEROFILL NOT NULL,
+  `people` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `score` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `opinion`
+--
+
+INSERT INTO `project` (`total`, `people`, `score`) VALUES
+(1, '2222', '111','1'),
+(2, '3333', '111','1');
+
+
+-- --------------------------------------------------------
+--
+-- 資料表結構 `user`
+--
+-- 使用者管理
 CREATE TABLE `user` (
   `id` tinyint(1) UNSIGNED ZEROFILL NOT NULL,
   `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
